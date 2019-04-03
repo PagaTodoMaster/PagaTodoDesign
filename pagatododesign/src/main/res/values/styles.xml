@@ -10,4 +10,10 @@
         <item name="colorAccent">@android:color/white</item>
         <item name="android:thicknessRatio">224</item>
     </style>
+
+    <declare-styleable name="HeadWallet">
+        <attr name="walletResImage" format="reference"/>
+        <attr name="headTitle" format="reference|string"/>
+        <attr name="headAmount" format="reference|string"/>
+    </declare-styleable>
 </resources>
