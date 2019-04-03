@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPT">#00a1e1</color>
+    <color name="gray_off">#e0e0e0</color>
+    <color name="red_error">#D50000</color>
+    <color name="gray_slate">#46606a</color>
+</resources>

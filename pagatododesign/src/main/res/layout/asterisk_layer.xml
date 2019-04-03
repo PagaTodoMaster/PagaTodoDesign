@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:id="@+id/linear_ast"
+    android:visibility="invisible">
+
+    <ImageView
+        android:id="@+id/ast_one"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_asterisk"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/ast_two"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_asterisk"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/ast_three"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_asterisk"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/ast_four"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_asterisk"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+
+
+    <ImageView
+        android:id="@+id/ast_five"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_asterisk"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+
+
+    <ImageView
+        android:id="@+id/ast_six"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_asterisk"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+</LinearLayout>
