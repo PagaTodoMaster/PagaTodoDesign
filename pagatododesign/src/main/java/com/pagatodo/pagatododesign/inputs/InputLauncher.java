@@ -45,6 +45,7 @@ public abstract class InputLauncher extends LinearLayout implements Input, View.
     protected LinearLayout linearAst;
     protected LinearLayout linearLines;
     protected ConstraintLayout rootView;
+    protected LinearLayout linearImageViewEye;
 
     public InputLauncher(Context context) {
         super(context);
@@ -129,5 +130,14 @@ public abstract class InputLauncher extends LinearLayout implements Input, View.
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    @Override
+    public void with_eye(Boolean active) {
+        if (active){
+            linearImageViewEye.setVisibility(VISIBLE);
+        }else {
+            linearImageViewEye.setVisibility(GONE);
+        }
     }
 }

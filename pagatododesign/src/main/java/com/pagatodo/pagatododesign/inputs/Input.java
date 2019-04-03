@@ -11,4 +11,5 @@ public interface Input {
     void setInputSecretListener(InputSecretListener listener);
     void setText(String text);
     String getText();
+    void with_eye(Boolean active);
 }

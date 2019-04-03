@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="InputSecretPass">
         <attr name="labelHint" format="reference"/>
+        <attr name="with_eye" format="boolean"/>
     </declare-styleable>
 </resources>

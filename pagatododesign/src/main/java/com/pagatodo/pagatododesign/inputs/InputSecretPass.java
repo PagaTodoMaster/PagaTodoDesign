@@ -58,6 +58,7 @@ public class InputSecretPass extends InputLauncher implements View.OnClickListen
         linearText = viewMain.findViewById(R.id.linear_text);
         linearAst = viewMain.findViewById(R.id.linear_ast);
         linearLines = viewMain.findViewById(R.id.layer_lines);
+        linearImageViewEye = viewMain.findViewById(R.id.imageView_layout);
 
         bind();
         if (attrs != null) {
@@ -68,6 +69,8 @@ public class InputSecretPass extends InputLauncher implements View.OnClickListen
             try {
                 String resText = a.getString(R.styleable.InputSecretPass_labelHint);
                 setHint(resText);
+                boolean with_eye = a.getBoolean(R.styleable.InputSecretPass_with_eye, false);
+                with_eye(with_eye);
 
             } finally {
                 a.recycle();
