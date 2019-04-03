@@ -7,4 +7,5 @@
     <color name="whiteColor_disable">#beffffff</color>
     <!-- Progress Loader Colors -->
     <color name="loader_background">#B400A1E1</color>
+    <color name="gray_disable">#c4c4c4</color>
 </resources>
