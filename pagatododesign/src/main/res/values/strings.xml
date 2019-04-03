@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PagaTodoDesign</string>
+    <!-- Progress Layout -->
+    <string name="loading_text">Cargando...</string>
 </resources>
