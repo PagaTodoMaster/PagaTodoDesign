@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 import com.pagatodo.pagatododesign.R;
-import com.pagatodo.pagatododesign.components.dataholders.HeadWalletData;
+import com.pagatodo.pagatododesign.dataholders.HeadWalletData;
 import com.pagatodo.pagatododesign.controllers.LauncherHolder;
 import com.pagatodo.pagatododesign.controllers.OnHolderListener;
 

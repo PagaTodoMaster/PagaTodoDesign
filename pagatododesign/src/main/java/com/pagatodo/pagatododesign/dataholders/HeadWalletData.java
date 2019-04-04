@@ -1,4 +1,4 @@
-package com.pagatodo.pagatododesign.components.dataholders;
+package com.pagatodo.pagatododesign.dataholders;
 
 import android.graphics.drawable.Drawable;
 
