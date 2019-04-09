@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_step"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@drawable/step_active_backgraund">
+
+    <TextView
+        android:id="@+id/step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/default_number"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

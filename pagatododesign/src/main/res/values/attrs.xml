@@ -8,4 +8,12 @@
         <attr name="iconResImage" format="reference"/>
         <attr name="iconNameText" format="reference|string"/>
     </declare-styleable>
+    <declare-styleable name="StepNatural">
+        <attr name="stepRes" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="StepBar">
+        <attr name="sizeSteps" format="integer"/>
+        <attr name="initialStep" format="integer"/>
+        <attr name="separationWidth" format="dimension"/>
+    </declare-styleable>
 </resources>
