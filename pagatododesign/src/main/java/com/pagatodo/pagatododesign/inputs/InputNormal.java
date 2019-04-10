@@ -100,6 +100,14 @@ public class InputNormal extends LinearLayoutGeneric implements View.OnFocusChan
         return Objects.requireNonNull(inputEditText.getText()).toString();
     }
 
+    public void setText(String text){
+        inputEditText.setText(text);
+    }
+
+    public TextInputEditText getInputEditText() {
+        return this.inputEditText;
+    }
+
     public void setHint(String textHint){
         inputLayout.setHint(textHint);
     }
