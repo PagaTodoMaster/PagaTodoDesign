@@ -16,4 +16,12 @@
         <attr name="initialStep" format="integer"/>
         <attr name="separationWidth" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="InputNormal">
+        <attr name="inputType" format="enum">
+            <enum name="textNormal" value="0"/>
+            <enum name="textEmail" value="1"/>
+        </attr>
+        <attr name="textHint" format="reference|string"/>
+
+    </declare-styleable>
 </resources>

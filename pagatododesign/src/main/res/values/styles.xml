@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <item name="colorPrimary">@color/colorPT</item>
         <item name="colorPrimaryDark">@color/colorPT</item>
         <item name="colorAccent">@color/colorPT</item>
@@ -16,4 +16,35 @@
         <attr name="headTitle" format="reference|string"/>
         <attr name="headAmount" format="reference|string"/>
     </declare-styleable>
+
+
+    <style name="hintActive" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/colorPT</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorPT</item>
+        <item name="colorPrimary">@color/colorPT</item>
+        <item name="colorControlNormal">@color/colorPT</item>
+        <item name="colorControlActivated">@color/colorPT</item>
+    </style>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColorHint">@color/colorPT</item>
+        <item name="android:textColor">@color/colorPT</item>
+        <item name="android:textSize">12sp</item>
+        <item name="colorAccent">@color/colorPT</item>
+        <item name="colorPrimary">@color/colorPT</item>
+        <item name="colorControlNormal">@color/colorPT</item>
+        <item name="colorControlActivated">@color/colorPT</item>
+    </style>
+
+    <style name="counterTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FF4400</item>
+        <item name="android:textSize">12sp</item>
+        <item name="colorAccent">#FF4400</item>
+        <item name="colorPrimary">#FF4400</item>
+        <item name="colorControlNormal">#FF4400</item>
+        <item name="colorControlActivated">#FF4400</item>
+    </style>
+
 </resources>

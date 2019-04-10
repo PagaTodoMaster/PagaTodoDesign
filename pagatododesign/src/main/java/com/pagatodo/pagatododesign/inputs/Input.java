@@ -8,7 +8,7 @@ public interface Input {
     void desactive();
     void setHint(String hintText);
     void isError();
-    void setInputSecretListener(InputSecretListener listener);
+    void setInputSecretListener(InputListener listener);
     void setText(String text);
     String getText();
     void with_eye(Boolean active);

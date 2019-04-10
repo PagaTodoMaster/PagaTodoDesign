@@ -23,7 +23,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public abstract class InputLauncher extends LinearLayout implements Input, View.OnFocusChangeListener,
         TextWatcher {
 
-    protected InputSecretListener listener;
+    protected InputListener listener;
     protected TextInputEditText inputEditText;
     protected View viewMain;
     protected TextView textviewHint;
@@ -95,7 +95,7 @@ public abstract class InputLauncher extends LinearLayout implements Input, View.
     }
 
     @Override
-    public void setInputSecretListener(InputSecretListener listener){
+    public void setInputSecretListener(InputListener listener){
         this.listener = listener;
     }
 

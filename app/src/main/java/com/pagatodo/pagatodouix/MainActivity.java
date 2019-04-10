@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        stepBar = findViewById(R.id.step_bar);
+        /*stepBar = findViewById(R.id.step_bar);
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
-        stepBar.jumpStep(5);
+        stepBar.jumpStep(5);*/
 
     }
 
