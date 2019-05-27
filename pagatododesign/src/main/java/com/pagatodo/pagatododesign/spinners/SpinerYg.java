@@ -54,7 +54,7 @@ public class SpinerYg extends LinearLayout {
                 textHint.setText(resTextHint);
                 textHint.setVisibility(VISIBLE);
                 dimenMargin = a.getDimensionPixelSize(R.styleable.SpinerYg_marigTextHint, 5);
-                setMarginText(dimenMargin);
+                //setMarginText(dimenMargin);
 
             } finally {
                 a.recycle();
@@ -81,7 +81,7 @@ public class SpinerYg extends LinearLayout {
     }
 
     public void setMarginText(int dimenMargin){
-        LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams llp = (LayoutParams) textHint.getLayoutParams();
         llp.setMargins(dp(dimenMargin),0,0,0);
         textHint.setLayoutParams(llp);
     }
