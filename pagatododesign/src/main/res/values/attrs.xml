@@ -25,5 +25,6 @@
     </declare-styleable>
     <declare-styleable name="SpinerYg">
         <attr name="textHintSpinner" format="reference|string"/>
+        <attr name="marigTextHint" format="dimension"/>
     </declare-styleable>
 </resources>

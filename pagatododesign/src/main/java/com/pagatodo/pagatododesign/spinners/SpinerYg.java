@@ -19,6 +19,7 @@ public class SpinerYg extends LinearLayout {
     private TextView textHint;
     private Spinner spinner;
     private ConstraintLayout layout;
+    private int dimenMargin;
 
     public SpinerYg(Context context) {
         super(context);
@@ -52,6 +53,9 @@ public class SpinerYg extends LinearLayout {
                 String resTextHint = a.getString(R.styleable.SpinerYg_textHintSpinner);
                 textHint.setText(resTextHint);
                 textHint.setVisibility(VISIBLE);
+                dimenMargin = a.getDimensionPixelSize(R.styleable.SpinerYg_marigTextHint, 5);
+                setMarginText(dimenMargin);
+
             } finally {
                 a.recycle();
             }
@@ -70,4 +74,21 @@ public class SpinerYg extends LinearLayout {
     public Spinner getSpinner() {
         return spinner;
     }
+
+    private int dp(int px){
+        float scale = textHint.getResources().getDisplayMetrics().density;
+        return (int) (scale * px + 0.5f);
+    }
+
+    public void setMarginText(int dimenMargin){
+        LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        llp.setMargins(dp(dimenMargin),0,0,0);
+        textHint.setLayoutParams(llp);
+    }
+    /*
+    * TextView forgot_pswrd = (TextView) findViewById(R.id.ForgotPasswordText);
+forgot_pswrd.setOnTouchListener(this);
+LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+llp.setMargins(50, 0, 0, 0); // llp.setMargins(left, top, right, bottom);
+forgot_pswrd.setLayoutParams(llp);*/
 }
