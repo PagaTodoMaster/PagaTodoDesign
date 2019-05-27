@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.pagatodo.pagatododesign.inputs.InputNormal;
 import com.pagatodo.pagatododesign.progress.steps.StepBar;
+import com.pagatodo.pagatododesign.spinners.SpinerYg;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -16,7 +17,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ( (InputNormal) findViewById(R.id.inputNormal)).setText("voy");
+        ((InputNormal) findViewById(R.id.inputNormal)).setText("voy");
+        ((SpinerYg) findViewById(R.id.spinner_yaganaste)).getLayout().setBackgroundResource(R.drawable.input_text_error);
+
         /*stepBar = findViewById(R.id.step_bar);
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);

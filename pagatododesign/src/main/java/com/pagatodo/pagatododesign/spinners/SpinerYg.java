@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.pagatodo.pagatododesign.R;
 
@@ -17,6 +18,7 @@ public class SpinerYg extends LinearLayout {
 
     private TextView textHint;
     private Spinner spinner;
+    private ConstraintLayout layout;
 
     public SpinerYg(Context context) {
         super(context);
@@ -38,6 +40,7 @@ public class SpinerYg extends LinearLayout {
         View viewItem = inflater.inflate(R.layout.spinner_yg,this,false);
         textHint = viewItem.findViewById(R.id.texthint);
         spinner = viewItem.findViewById(R.id.spinner_yg);
+        layout = viewItem.findViewById(R.id.root_layout);
 
         if (attrs != null) {
             TypedArray a = getContext().getTheme().obtainStyledAttributes(
@@ -54,6 +57,10 @@ public class SpinerYg extends LinearLayout {
             }
         }
         this.addView(viewItem);
+    }
+
+    public ConstraintLayout getLayout() {
+        return layout;
     }
 
     public TextView getTextHint() {

@@ -71,6 +71,7 @@
         app:layout_constraintStart_toEndOf="@+id/button" />
 
     <com.pagatodo.pagatododesign.spinners.SpinerYg
+        android:id="@+id/spinner_yaganaste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
