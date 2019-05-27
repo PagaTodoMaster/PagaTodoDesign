@@ -47,4 +47,13 @@
         <item name="colorControlActivated">#FF4400</item>
     </style>
 
+    <style name="CustomSpinner" parent="Base.Widget.AppCompat.Spinner">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="SpinnerNoArrow" parent="CustomSpinner">
+        <item name="android:focusable">true</item>
+    </style>
+
+
 </resources>

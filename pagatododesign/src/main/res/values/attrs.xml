@@ -22,6 +22,8 @@
             <enum name="textEmail" value="1"/>
         </attr>
         <attr name="textHint" format="reference|string"/>
-
+    </declare-styleable>
+    <declare-styleable name="SpinerYg">
+        <attr name="textHintSpinner" format="reference|string"/>
     </declare-styleable>
 </resources>
