@@ -1,13 +1,16 @@
 package com.pagatodo.pagatododesign.spinners;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,13 +20,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.pagatodo.pagatododesign.R;
 
-public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelectedListener, View.OnClickListener,
+        View.OnTouchListener {
 
     private TextView texHintFilled;
     private Spinner spinner;
+    private View rootView;
     private ConstraintLayout layout;
     private SpinnerListener listener;
     private BaseAdapter adapter;
+    private ImageView arrow;
 
 
     public SpinerYg(Context context) {
@@ -41,13 +47,14 @@ public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelected
         init(attrs);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void init(AttributeSet attrs){
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View viewItem = inflater.inflate(R.layout.spinner_yg,this,false);
-        texHintFilled = viewItem.findViewById(R.id.text_hint_filled);
-        spinner = viewItem.findViewById(R.id.spinner);
-        layout = viewItem.findViewById(R.id.root_layout);
-        viewItem.findViewById(R.id.spiner_row_down).setOnClickListener(this);
+        rootView = inflater.inflate(R.layout.spinner_yg,this,false);
+        texHintFilled = rootView.findViewById(R.id.text_hint_filled);
+        spinner = rootView.findViewById(R.id.spinner);
+        layout = rootView.findViewById(R.id.root_layout);
+        arrow = rootView.findViewById(R.id.spiner_row_down);
 
         if (attrs != null) {
             TypedArray a = getContext().getTheme().obtainStyledAttributes(
@@ -64,26 +71,23 @@ public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelected
                 a.recycle();
             }
         }
-        layout.setOnClickListener(this);
 
         spinner.setOnItemSelectedListener(this);
-        this.addView(viewItem);
+        spinner.setOnTouchListener(this);
+        layout.setOnClickListener(this);
+        arrow.setOnClickListener(this);
+        this.addView(rootView);
     }
+
 
     public void setListener(SpinnerListener listener) {
         this.listener = listener;
     }
 
-    public void selectionItem(int position){
-        this.spinner.setSelection(position);
-    }
 
-    public Object getSelectionItem(int position){
-        if (this.adapter != null){
-            return this.adapter.getItem(position);
-        }
-        return null;
+    public Object getSelectionItem(){
 
+        return spinner.getSelectedItem();
     }
 
     public void setAdapter(BaseAdapter adapter){
@@ -95,12 +99,21 @@ public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelected
         this.texHintFilled.setVisibility(visibiltyHint);
     }
 
-    public void showDropDown(){
-        new Handler().postDelayed(() -> {
-                spinner.performClick();
+    public void showDropDown(boolean delay){
+        if (delay){
+            new Handler().postDelayed(() -> {
                 inActive();
-        }, 1000);
+                spinner.performClick();
+            }, 1000);
+        }
+        else {
+            inActive();
+            spinner.performClick();
+
+        }
     }
+
+
 
     public void inActive(){
         this.layout.setBackgroundResource(R.drawable.input_text_active);
@@ -123,7 +136,7 @@ public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelected
             } else {
                 setVisibiltyHint(View.GONE);
             }
-            listener.onItemSelected(position);
+            listener.onItemSelected(this,position);
         }
     }
 
@@ -134,9 +147,24 @@ public class SpinerYg extends LinearLayout implements AdapterView.OnItemSelected
 
     @Override
     public void onClick(View v) {
-        spinner.performClick();
-        inActive();
+        int i = v.getId();
+        if (listener != null) {
+            if (i == R.id.root_layout) {
+                listener.setOnClickListener(this);
+            } else if (i == R.id.spiner_row_down) {
+                listener.setOnClickListenerArrow(this);
+            }
+        }
     }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if (listener != null){
+            listener.setOnTouchListener(this);
+        }
+        return false;
+    }
+
 
     /*
     * TextView forgot_pswrd = (TextView) findViewById(R.id.ForgotPasswordText);

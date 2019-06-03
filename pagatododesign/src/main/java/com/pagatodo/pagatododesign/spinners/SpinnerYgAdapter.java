@@ -62,13 +62,8 @@ public class SpinnerYgAdapter extends BaseAdapter {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = inflter.inflate(R.layout.spinner_text,parent,false);
-
         TextView textView = convertView.findViewById(R.id.text_spinner);
         textView.setText(list.get(position));
-
-        float scale = textView.getResources().getDisplayMetrics().density;
-
-
         return convertView;
     }
 
